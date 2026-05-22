@@ -39,6 +39,8 @@ RUN mkdir -p storage/logs
 RUN chmod -R 777 storage
 RUN chmod -R 777 bootstrap/cache
 
+RUN php artisan storage:link || true
+
 EXPOSE 10000
 
 CMD php artisan serve --host=0.0.0.0 --port=10000
